@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\vistasdeinmo;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::get('/', function () {
+    return view('home1');
+});*/
+
+Route::get('/',[vistasdeinmo::class,'vista1']);
+Route::get('/about.php',[vistasdeinmo::class,'vista2']);
+Route::get('/agents.php',[vistasdeinmo::class,'vista3']);
+Route::get('/blog.php',[vistasdeinmo::class,'vista4']);
+Route::get('/contact.php',[vistasdeinmo::class,'vista5']);
+Route::get('/buysalerent.php',[vistasdeinmo::class,'vista6']);
+Route::get('/property-detail.php',[vistasdeinmo::class,'vista7']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
